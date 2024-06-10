@@ -7,3 +7,9 @@
     width: 800px; /* Set width as specified */
     height: 600px; /* Set height as specified */
 }
+
+/* Styles for arrows to make them visually distinct */
+.arrow {
+    background-color: #FFD700; /* Golden color for arrows */
+    border: 1px solid #fff; /* White border for contrast */
+}

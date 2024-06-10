@@ -14,10 +14,18 @@ let player = {
 };
 
 let enemies = [];
+let arrows = [];
 
 function drawPlayer() {
     ctx.fillStyle = '#00FF00';
     ctx.fillRect(player.x, player.y, player.width, player.height);
+}
+
+function drawArrow() {
+    arrows.forEach(arrow => {
+        ctx.fillStyle = '#FF0000'; // Red color for arrows
+        ctx.fillRect(arrow.x, arrow.y, arrow.width, arrow.height);
+    });
 }
 
 function clearCanvas() {
@@ -27,9 +35,16 @@ function clearCanvas() {
 function update() {
     clearCanvas();
     drawPlayer();
+    drawArrow();
 
     player.x += player.dx;
     player.y += player.dy;
+
+    arrows.forEach(arrow => { // Move arrows
+        arrow.y -= arrow.speed;
+    });
+
+    arrows = arrows.filter(arrow => arrow.y > 0); // Remove arrows that go off screen
 
     requestAnimationFrame(update);
 }
@@ -50,6 +65,16 @@ function moveDown() {
     player.dy = player.speed;
 }
 
+function shootArrow() {
+    arrows.push({
+        x: player.x + player.width / 2 - 5, // Center the arrow on the player
+        y: player.y,
+        width: 10,
+        height: 20,
+        speed: 7
+    });
+}
+
 function keyDown(e) {
     if (e.key === 'ArrowRight' || e.key === 'Right') {
         moveRight();
@@ -59,6 +84,8 @@ function keyDown(e) {
         moveUp();
     } else if (e.key === 'ArrowDown' || e.key === 'Down') {
         moveDown();
+    } else if (e.key === ' ' || e.key === 'Spacebar') {
+        shootArrow();
     }
 }
 

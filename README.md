@@ -7,7 +7,7 @@ Welcome to our newly added Run Shooting Game! Developed using HTML, CSS, and Jav
 ### How to Play
 
 - Use the arrow keys to move your player around the game area.
-- Press space to shoot at enemies.
+- Press space to shoot arrows at enemies.
 - Avoid enemies and obstacles to survive as long as possible.
 - Collect power-ups to enhance your abilities.
 - The game gets progressively harder as you advance.

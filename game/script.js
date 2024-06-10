@@ -28,6 +28,13 @@ function drawArrow() {
     });
 }
 
+function drawEnemies() {
+    enemies.forEach(enemy => {
+        ctx.fillStyle = '#FF0000'; // Red color for enemies
+        ctx.fillRect(enemy.x, enemy.y, enemy.width, enemy.height);
+    });
+}
+
 function clearCanvas() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
@@ -36,6 +43,7 @@ function update() {
     clearCanvas();
     drawPlayer();
     drawArrow();
+    drawEnemies();
 
     player.x += player.dx;
     player.y += player.dy;

@@ -13,3 +13,9 @@
     background-color: #FFD700; /* Golden color for arrows */
     border: 1px solid #fff; /* White border for contrast */
 }
+
+/* Enhanced styles for enemies to improve their appearance on the canvas */
+.enemy {
+    background-color: #FF4500; /* Orange color for enemies */
+    border: 1px solid #fff; /* White border for contrast */
+}

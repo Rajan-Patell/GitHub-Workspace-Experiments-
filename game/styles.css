@@ -1,6 +1,6 @@
 /* Basic styles for the game canvas to align with minimal graphic design principles */
 #gameCanvas {
-    background-color: #000; /* Dark background for better visibility */
+    background-color: #A52A2A; /* Brown background for better visibility */
     display: block; /* Block display to center canvas on the page */
     margin: 0 auto; /* Center canvas horizontally */
     border: 1px solid #fff; /* White border for contrast */

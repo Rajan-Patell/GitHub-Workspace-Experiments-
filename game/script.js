@@ -17,7 +17,7 @@ let enemies = [];
 let arrows = [];
 
 function drawPlayer() {
-    ctx.fillStyle = '#00FF00';
+    ctx.fillStyle = '#0000FF'; // Blue color for the player
     ctx.fillRect(player.x, player.y, player.width, player.height);
 }
 

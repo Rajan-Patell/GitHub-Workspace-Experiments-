@@ -2,7 +2,7 @@
 
 ## Run Shooting Game Overview
 
-Welcome to our Run Shooting Game! Developed using HTML, CSS, and JavaScript, this game offers a thrilling experience as you navigate through levels, shooting enemies and dodging obstacles. Here's what you need to know to get started:
+Welcome to our newly added Run Shooting Game! Developed using HTML, CSS, and JavaScript, this game offers a thrilling experience as you navigate through levels, shooting enemies and dodging obstacles, all with the convenience of keyboard navigation and a minimalistic graphic design. Here's what you need to know to get started:
 
 ### How to Play
 

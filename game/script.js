@@ -1,94 +1,74 @@
-// Game logic and functionality
+// Game logic, player movement, enemy interactions, scoring, and keyboard navigation
 
-// Player object
-const player = {
-    x: 50,
-    y: 50,
-    speed: 5,
-    move: function(direction) {
-        switch (direction) {
-            case 'up':
-                this.y -= this.speed;
-                break;
-            case 'down':
-                this.y += this.speed;
-                break;
-            case 'left':
-                this.x -= this.speed;
-                break;
-            case 'right':
-                this.x += this.speed;
-                break;
-        }
-        updateGameArea();
-    }
+const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
+
+let player = {
+    x: canvas.width / 2,
+    y: canvas.height - 30,
+    width: 50,
+    height: 50,
+    speed: 5
 };
 
-// Enemy object
-const enemy = {
-    x: 100,
-    y: 100,
-    speed: 3,
-    move: function() {
-        // Simple AI to follow the player
-        if (player.x > this.x) {
-            this.x += this.speed;
-        } else {
-            this.x -= this.speed;
-        }
-        if (player.y > this.y) {
-            this.y += this.speed;
-        } else {
-            this.y -= this.speed;
-        }
-        updateGameArea();
-    }
-};
+let enemies = [];
+let bullets = [];
+let score = 0;
 
-// Game area update function
-function updateGameArea() {
-    const gameArea = document.getElementById('game-container');
-    gameArea.innerHTML = ''; // Clear the game area
-    // Draw player
-    const playerElement = document.createElement('div');
-    playerElement.style.left = player.x + 'px';
-    playerElement.style.top = player.y + 'px';
-    playerElement.classList.add('player');
-    gameArea.appendChild(playerElement);
-    // Draw enemy
-    const enemyElement = document.createElement('div');
-    enemyElement.style.left = enemy.x + 'px';
-    enemyElement.style.top = enemy.y + 'px';
-    enemyElement.classList.add('enemy');
-    gameArea.appendChild(enemyElement);
+function drawPlayer() {
+    ctx.fillStyle = '#61dafb';
+    ctx.fillRect(player.x, player.y, player.width, player.height);
 }
 
-// Event listeners for player movement
-document.addEventListener('keydown', function(e) {
-    switch (e.key) {
-        case 'ArrowUp':
-            player.move('up');
-            break;
-        case 'ArrowDown':
-            player.move('down');
-            break;
-        case 'ArrowLeft':
-            player.move('left');
-            break;
-        case 'ArrowRight':
-            player.move('right');
-            break;
-    }
-});
-
-// Initialize game
-function initGame() {
-    updateGameArea();
-    // Enemy movement logic
-    setInterval(() => {
-        enemy.move();
-    }, 1000 / 30); // Update enemy position 30 times per second
+function movePlayer() {
+    document.addEventListener('keydown', (event) => {
+        switch (event.key) {
+            case 'ArrowLeft':
+                if (player.x > 0) {
+                    player.x -= player.speed;
+                }
+                break;
+            case 'ArrowRight':
+                if (player.x < canvas.width - player.width) {
+                    player.x += player.speed;
+                }
+                break;
+            case 'Space':
+                shootBullet();
+                break;
+        }
+    });
 }
 
-// Start the game
-window.onload = initGame;
+function shootBullet() {
+    let bullet = {
+        x: player.x + player.width / 2,
+        y: player.y,
+        width: 5,
+        height: 10,
+        speed: 7
+    };
+    bullets.push(bullet);
+}
+
+function drawBullet() {
+    bullets.forEach((bullet, index) => {
+        ctx.fillStyle = 'white';
+        ctx.fillRect(bullet.x, bullet.y, bullet.width, bullet.height);
+        bullet.y -= bullet.speed;
+
+        if (bullet.y < 0) {
+            bullets.splice(index, 1);
+        }
+    });
+}
+
+function updateGame() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawPlayer();
+    drawBullet();
+    requestAnimationFrame(updateGame);
+}
+
+movePlayer();
+updateGame();

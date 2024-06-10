@@ -1,35 +1,36 @@
-/* Basic styling for the game */
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-}
+/* Basic styling for the game including colors, layout, and minimalistic graphic design */
 
-#game-container {
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #282c34;
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #282c34; /* Dark background for a minimalistic design */
 }
 
-/* Minimalistic graphic design applied */
-.game-element {
-    border: 2px solid #61dafb; /* Bright contrast color for game elements */
-    padding: 10px;
-    margin: 10px;
-    border-radius: 5px;
+#game-container {
+    width: 800px;
+    height: 600px;
+    background-color: #20232a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
 .player, .enemy {
-    transition: all 0.2s ease-in-out; /* Smooth transitions for player and enemy movements */
+    width: 50px;
+    height: 50px;
+    position: absolute;
 }
 
 .player {
-    background-color: #4CAF50; /* Player color */
+    background-color: #61dafb;
 }
 
 .enemy {
-    background-color: #F44336; /* Enemy color */
+    background-color: #e06c75;
 }

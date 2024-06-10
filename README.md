@@ -1,19 +1,23 @@
 # GitHub-Workspace-Experiments-
 
-## Game Overview
+## Run Shooting Game Overview
 
-Welcome to our game! This game is developed using HTML, CSS, and JavaScript to provide a fun and interactive experience. Here's what you need to know to get started:
+Welcome to our Run Shooting Game! Developed using HTML, CSS, and JavaScript, this game offers a thrilling experience as you navigate through levels, shooting enemies and dodging obstacles. Here's what you need to know to get started:
 
 ### How to Play
 
 - Use the arrow keys to move your player around the game area.
-- Avoid enemies and collect points to increase your score.
+- Press space to shoot at enemies.
+- Avoid enemies and obstacles to survive as long as possible.
+- Collect power-ups to enhance your abilities.
 - The game gets progressively harder as you advance.
 
 ### Features
 
-- Dynamic enemy AI that adjusts difficulty based on your performance.
+- Dynamic enemy AI that adjusts difficulty based on your performance, including patrolling, taking cover, and attacking strategies.
+- Difficulty scaling ensures the game remains challenging and engaging throughout.
 - Minimalistic graphic design for a clean and engaging user interface.
 - Responsive design that works on both desktop and mobile devices.
+- Fully navigable using keyboards for an immersive gameplay experience.
 
 Enjoy the game and try to beat the high score!

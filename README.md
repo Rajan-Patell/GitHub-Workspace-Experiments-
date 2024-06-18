@@ -70,3 +70,12 @@ To set up this project locally, follow these steps:
 5. Open your browser and navigate to `http://localhost:3000` to view the project.
 
 For detailed information on the project structure and how to contribute, please refer to the project documentation.
+
+## Instructions for Compiling and Serving the Website
+
+To compile the React project and serve the `public/index.html` for viewing the website, follow these steps:
+
+1. Ensure you have a build tool like Webpack or Parcel installed. If not, you can install them by running `npm install -g webpack` (for Webpack) or `npm install -g parcel-bundler` (for Parcel).
+2. Compile the project by running `webpack` (for Webpack) or `parcel build` (for Parcel). This will bundle your JavaScript and CSS files.
+3. Serve the `public/index.html` using a static server. You can use `serve` by running `npm install -g serve` and then `serve -s build` to start the server.
+4. Open your browser and navigate to the URL provided by the static server to view the website.

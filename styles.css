@@ -1,0 +1,36 @@
+/* Define the styles for the 3D coin, including its silver color and 3D appearance */
+#coin-container {
+  width: 200px;
+  height: 200px;
+  background-color: silver;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: black;
+  text-shadow: 1px 1px 2px white;
+  margin: 100px auto;
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5);
+  transform: perspective(1000px) rotateY(0deg);
+  transition: transform 0.5s;
+}
+
+/* Use CSS3 properties such as `border-radius`, `box-shadow`, and `transform` for the 3D effect */
+#coin-container:hover {
+  transform: perspective(1000px) rotateY(180deg);
+}
+
+/* Style the `<div>` container from `index.html` to center the coin on the page */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+}
+
+/* Set the font color for the numbers 1 to 10 to contrast against the silver background */
+#coin-container {
+  color: #000; /* Contrast color for readability */
+}
